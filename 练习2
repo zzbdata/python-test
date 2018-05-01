@@ -1,0 +1,55 @@
+import random
+random.seed(9)
+k=input("plaese input the length of road: ")
+t=int(k)
+l = list()
+a = 0
+b = 0
+l = [random.random() for i in range(t)]
+o=list()
+for i in l:
+    if i >= 0.75:
+        o.append("X")
+    else:
+        o.append(".")
+o1="".join(o)
+print("the road is", o1)
+o2=o1.split('X')
+m=list()
+for i in o2:
+    k=len(i)
+    m.append(k)
+k=0
+for i in m:
+    if i==0:
+        continue
+    elif i%3==0:
+        k+=i//3
+    else:
+        k+=i//3+1
+print(k)
+
+k=input("plaese input tho length of road: ")
+t=int(k)
+o=list()
+a=0
+b=0
+for i in range(t):
+    p=input("please input your choose:")
+    o.append(p)
+o1="".join(o)
+print("the road is", o1)
+o2=o1.split('X')
+m=list()
+for i in o2:
+    k=len(i)
+    m.append(k)
+k=0
+for i in m:
+    if i==0:
+        continue
+    elif i%3==0:
+        k+=i//3
+    else:
+        k+=i//3+1
+print(k)
