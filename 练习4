@@ -1,0 +1,25 @@
+t=input("clock number: ")
+list1=[]
+list2=[]
+k=int(t)
+for i in range(k):
+    t=input("Hour: ")
+    list1.append(t)
+    t=input("Minute: ")
+    list2.append(t)
+list1=[int(i) for i in list1]
+list2=[int(i) for i in list2]
+list3=list1.copy()
+list3=[i*60 for i in list3]
+list=list(map(lambda x:x[0]+x[1],zip(list3,list2)))
+list.append(1000000)
+p=input("Time to school(Minute): ")
+p1=int(p)
+x=input("Class start(Hour): ")
+y=input("Class start(Minute): ")
+x1=int(x)
+y1=int(y)
+z=x1*60+y1
+for i in range(len(list)-1):
+    if z-p1>list[i] and z-p1<list[i+1]:
+        print(list1[i],":",list2[i])
