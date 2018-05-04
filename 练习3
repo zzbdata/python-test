@@ -1,0 +1,25 @@
+k=input("please input the number of people: ")
+a=int(k)
+l=input("please input the number of works: ")
+b=int(l)
+list=[]
+dic={}
+for key in range(b):
+    m=input("%dth Di is: "%(key+1))
+    int(m)
+    n=input("%dth Pi is: "%(key+1))
+    int(n)
+    dic[m]=n
+for number in range(a):
+    p=input("%dth Ai is: "%(number+1))
+    list.append(p)
+list=[int(i) for i in list]
+q=dic.keys()
+q=[int(i) for i in q]
+q.append(100000000000)
+y=q.copy()
+y=[str(i) for i in y]
+for i in list:
+    for j in range(3):
+        if i>=q[j] and i<q[j+1]:
+            print(dic[y[j]])
