@@ -1,0 +1,38 @@
+N=input("the number of Matrix： ")
+n=int(N)
+left=[]
+down=[]
+right=[]
+up=[]
+for i in range(n):
+    x=input("left: ")
+    left.append(x)
+    y=input("down: ")
+    down.append(y)
+    z=input("right: ")
+    right.append(z)
+    w=input("up:")
+    up.append(w)
+left=[int(i) for i in left]
+right=[int(i) for i in right]
+down=[int(i) for i in down]
+up=[int(i) for i in up]
+print(left,right,down,up)
+list=[]
+for i in range(3):
+    sum=0
+    for j in range(3):
+        if i==j:
+            continue
+        if (left[i]<=left[j]<=right[i] and down[i]<=down[j]<=up[i]) or\
+                ((left[i]<=left[j]<=right[i] and down[i]<=up[j]<=up[i])) or\
+                (left[i]<=right[j]<=right[i] and down[i]<=down[j]<=up[i]) or\
+                (left[i]<=right[j]<=right[i] and down[i]<=up[j]<=up[i]):
+            if left[j]==right[i] or right[j]==left[i] or up[j]==down[i] or down[j]==up[i]:
+                continue
+            else:
+                sum+=1
+    list.append(sum)
+print(list)
+p=sorted(list)
+print(p[-1])
